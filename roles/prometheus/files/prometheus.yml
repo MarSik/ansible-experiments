@@ -1,0 +1,16 @@
+scrape_configs:
+  - job_name: 'prometheus'
+    scrape_interval: 5s
+    target_groups:
+      - targets: ['localhost:9090']
+      
+  - job_name: 'node'
+    scrape_interval: 5s
+    target_groups:
+      - targets: ['prometheus-node:9100']
+  
+  - job_name: 'push'
+    scrape_interval: 5s
+    target_groups:
+      - targets: ['prometheus-push:9091']
+

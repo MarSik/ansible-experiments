@@ -1,0 +1,12 @@
+---
+- hosts: ansible_vms
+  remote_user: root
+  vars:
+    MYSQL_ROOT_PASSWORD: rootpw
+    MYSQL_DATABASE: engine
+    MYSQL_USER: engine
+  roles:
+    - docker
+    - prometheus
+    - mariadb
+
